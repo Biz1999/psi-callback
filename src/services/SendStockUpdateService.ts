@@ -22,15 +22,13 @@ class SendStockUpdateService {
       Promise.resolve(
         await api
           .post("/stock_updates", deposito)
-          // .then((response) =>
-          //   console.log(
-          //     response.status,
-          //     "O que enviei:",
-          //     deposito,
-          //     "O que recebi para comparação:",
-          //     data
-          //   )
-          // )
+          .then((response) =>
+            console.log(
+              response.status,
+              deposito.product_sku,
+              deposito.store_slug
+            )
+          )
           .catch((error) => console.log(error.response.data))
       );
     } catch (error: any) {
