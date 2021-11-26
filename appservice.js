@@ -17,3 +17,10 @@ svc.on("install", function () {
 });
 
 svc.install();
+
+// Uninstall part
+svc.on("uninstall", function () {
+  svc.start();
+});
+
+svc.uninstall();
